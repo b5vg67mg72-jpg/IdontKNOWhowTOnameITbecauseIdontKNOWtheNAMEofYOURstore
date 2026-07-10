@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Hobby Export Pipeline | Gunpla & Figures</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">HM</div>
+          <div>
+            <h1 data-i18n="brandTitle">Hobby Monitor</h1>
+            <p data-i18n="brandSubtitle">Global buyer outreach pipeline</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active" data-view="dashboard" title="Dashboard">
+            <span data-i18n="navDashboard">Dashboard</span>
+          </button>
+          <button class="nav-item" data-view="records" title="Stock history">
+            <span data-i18n="navHistory">History</span>
+          </button>
+          <button class="nav-item" data-view="sources" title="Data sources">
+            <span data-i18n="navSources">Sources</span>
+          </button>
+        </nav>
+
+        <section class="filters">
+          <h2 data-i18n="filtersTitle">Filters</h2>
+          <label>
+            <span data-i18n="languageLabel">Language</span>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="fil">Filipino</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="regionLabel">Region</span>
+            <select id="regionFilter">
+              <option value="all" data-i18n="allRegions">All regions</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="typeLabel">Product type</span>
+            <select id="typeFilter">
+              <option value="all" data-i18n="allProducts">All products</option>
+              <option value="Gunpla" data-i18n="gunplaOption">Gunpla / Gundam model kits</option>
+              <option value="Figure" data-i18n="figureOption">Anime figures</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="statusLabel">Stock status</span>
+            <select id="statusFilter">
+              <option value="all" data-i18n="allStatus">All status</option>
+              <option value="critical" data-i18n="critical">Critical</option>
+              <option value="low" data-i18n="low">Low stock</option>
+              <option value="healthy" data-i18n="healthy">Healthy</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="searchLabel">Search</span>
+            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Store, SKU, product" />
+          </label>
+          <label>
+            <span data-i18n="sortLabel">Sort by</span>
+            <select id="sortSelect">
+              <option value="risk" data-i18n="sortRisk">Restock risk</option>
+              <option value="stock-asc" data-i18n="sortLow">Lowest stock first</option>
+              <option value="stock-desc" data-i18n="sortHigh">Highest stock first</option>
+              <option value="region" data-i18n="sortRegion">Region</option>
+            </select>
+          </label>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" data-i18n="eyebrow">Live inventory dashboard</p>
+            <h2 data-i18n="pageTitle">Gunpla and anime figure stock tracker</h2>
+          </div>
+          <div class="actions">
+            <button id="refreshBtn" class="icon-button" title="Refresh stock now" data-i18n="refresh">Refresh</button>
+            <button id="toggleLiveBtn" class="primary-button" title="Start or stop live monitoring">Live On</button>
+            <button id="exportBtn" class="secondary-button" title="Export stock history as CSV" data-i18n="exportCsv">Export CSV</button>
+          </div>
+        </header>
+
+        <section class="hero-strip">
+          <div class="hero-copy">
+            <h3 data-i18n="heroTitle">Monitor stock by region, store, and product category.</h3>
+            <p data-i18n="heroText">Designed for finding overseas shops that may buy Japan-sourced Gunpla, Gundam model kits, anime figures, and hobby goods.</p>
+          </div>
+          <div class="mini-products" aria-label="Product visual">
+            <div class="product-tile kit">
+              <span data-i18n="tileGunplaSub">Gundam kits</span>
+              <strong>Gunpla</strong>
+            </div>
+            <div class="product-tile figure">
+              <span data-i18n="tileFigureSub">Collectibles</span>
+              <strong data-i18n="tileFigureTitle">Figures</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="owner-guide" aria-labelledby="ownerGuideTitle">
+          <div class="section-header guide-header">
+            <div>
+              <p class="eyebrow">How To Use It</p>
+              <h3 id="ownerGuideTitle">How to use this site to find overseas buyers for Japan-sourced hobby goods</h3>
+            </div>
+          </div>
+          <div class="owner-flow">
+            <article class="owner-step">
+              <strong>1</strong>
+              <h4>Choose target overseas buyer types</h4>
+              <p>Use the dashboard to identify shops that already sell anime goods, figures, Gunpla, model kits, collectibles, blind boxes, or Japanese character merchandise. These buyers are more likely to understand the products quickly.</p>
+            </article>
+            <article class="owner-step">
+              <strong>2</strong>
+              <h4>Prepare a buyer contact list</h4>
+              <p>For each country, collect shop name, buyer or owner name, Instagram, email, website form, phone, and the product categories they already sell. Contact decision makers rather than only general customer service.</p>
+            </article>
+            <article class="owner-step">
+              <strong>3</strong>
+              <h4>Offer a low-risk starter order</h4>
+              <p>Do not start by asking for a large order. Offer a focused test: 10-20 model kits, 10-30 figures or anime goods, real product photos, condition checks, shipping estimate, invoice, and packing list.</p>
+            </article>
+            <article class="owner-step">
+              <strong>4</strong>
+              <h4>Show the Japan-side value</h4>
+              <p>Explain that a Japan-side source can check box condition, compare local prices, group products from multiple shops, photograph items before shipment, and help overseas stores reduce sourcing uncertainty.</p>
+            </article>
+            <article class="owner-step">
+              <strong>5</strong>
+              <h4>Use this site as a sales presentation</h4>
+              <p>Send this page to overseas hobby shops when introducing the sourcing service. It explains product focus, target markets, starter-order logic, stock checking, photos before shipment, and repeat-order workflow.</p>
+            </article>
+            <article class="owner-step">
+              <strong>6</strong>
+              <h4>Scale by overseas market response</h4>
+              <p>Track which countries reply, what products they ask about, price objections, preferred shipping methods, and requested brands. Use reply data to decide which markets deserve deeper sourcing and follow-up.</p>
+            </article>
+          </div>
+          <div class="owner-note">
+            <h4>Practical first move</h4>
+            <p>Create a lead spreadsheet with country, shop name, buyer name, email, Instagram, product fit, first message date, reply status, requested products, sample-order size, shipping estimate, and next follow-up date.</p>
+          </div>
+        </section>
+
+        <section class="metrics">
+          <div class="metric">
+            <span data-i18n="metricSku">Total monitored SKUs</span>
+            <strong id="skuCount">0</strong>
+          </div>
+          <div class="metric">
+            <span data-i18n="metricUnits">Total stock units</span>
+            <strong id="unitCount">0</strong>
+          </div>
+          <div class="metric warning">
+            <span data-i18n="metricAlerts">Low or critical SKUs</span>
+            <strong id="alertCount">0</strong>
+          </div>
+          <div class="metric">
+            <span data-i18n="metricUpdate">Last update</span>
+            <strong id="lastUpdate">-</strong>
+          </div>
+          <div class="metric">
+            <span data-i18n="metricReorder">Recommended reorder units</span>
+            <strong id="reorderUnits">0</strong>
+          </div>
+        </section>
+
+        <section id="dashboardView" class="view active">
+          <div class="section-header">
+            <h3 data-i18n="inventoryTitle">Current Inventory</h3>
+            <p data-i18n="inventoryText">Auto-refresh records every stock snapshot to local history.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="thRegion">Region</th>
+                  <th data-i18n="thStore">Store / Source</th>
+                  <th data-i18n="thProduct">Product</th>
+                  <th data-i18n="thType">Type</th>
+                  <th data-i18n="thStock">Stock</th>
+                  <th data-i18n="thChange">Change</th>
+                  <th data-i18n="thStatus">Status</th>
+                  <th data-i18n="thReorder">Reorder point</th>
+                  <th data-i18n="thUpdated">Updated</th>
+                  <th data-i18n="thReliability">Reliability</th>
+                </tr>
+              </thead>
+              <tbody id="inventoryBody"></tbody>
+            </table>
+          </div>
+
+          <div class="section-header sub">
+            <h3 data-i18n="reorderTitle">Restock Queue</h3>
+            <p data-i18n="reorderText">Prioritized from lowest stock, product type, reliability, and reorder point.</p>
+          </div>
+          <div class="reorder-grid" id="reorderGrid"></div>
+        </section>
+
+        <section id="recordsView" class="view">
+          <div class="section-header">
+            <h3 data-i18n="historyTitle">Stock History</h3>
+            <p data-i18n="historyText">Latest stock snapshots saved in this browser.</p>
+          </div>
+          <div class="table-wrap compact">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="thTime">Time</th>
+                  <th>SKU</th>
+                  <th data-i18n="thStoreShort">Store</th>
+                  <th data-i18n="thRegion">Region</th>
+                  <th data-i18n="thType">Type</th>
+                  <th data-i18n="thStock">Stock</th>
+                  <th data-i18n="thStatus">Status</th>
+                </tr>
+              </thead>
+              <tbody id="historyBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="sourcesView" class="view">
+          <div class="section-header">
+            <h3 data-i18n="sourcesTitle">Monitoring Sources</h3>
+            <p data-i18n="sourcesText">Use official APIs, permitted scraping, OpenClaw runs, or manual CSV uploads for accurate stock.</p>
+          </div>
+          <div class="source-grid" id="sourceGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
